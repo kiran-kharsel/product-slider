@@ -137,7 +137,7 @@ const sliderElem = document.querySelector('.slider-container');
 const prevBtn = document.querySelector('.prev-btn')
 const nextBtn = document.querySelector('.next-btn')
 
-let currentLeft = 240;
+let currentLeft = 250;
 let counter = 0;
 let totalWidth = 960
 let noOfCardShow = totalWidth / currentLeft;
