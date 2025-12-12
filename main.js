@@ -100,8 +100,24 @@ function showCards(){
 
 showCards();
 
-prevBtn.addEventListener('click', function(){});
+let currentLeft = 0;
+let slideVlaue = 240
+
+prevBtn.addEventListener('click', function(){
+    currentLeft -= slideVlaue;
+    if(currentLeft == 0){
+        currentLeft = 20;
+        sliderElem.style.left = `${currentLeft}px`;
+        prevBtn.disabled = true;
+    }else{
+        sliderElem.style.left = `-${currentLeft}px`;
+    }
+    //sliderElem.style.left = `-${currentLeft}px`;
+    console.log(currentLeft);
+});
 
 nextBtn.addEventListener('click', function(){
-    console.log('ok')
+    currentLeft += slideVlaue;
+    //console.log(currentLeft);
+    sliderElem.style.left = `-${currentLeft}px`;
 })
