@@ -39,7 +39,8 @@ body{
     height: 350px;
     padding: 10px 0px;
     position: relative;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+    overflow: hidden;
 }
 
 .slider-container .prev-btn{
@@ -70,28 +71,19 @@ body{
     color: cornflowerblue;
 }
 
-.slider-container .slider{
-    display: flex;
-    background-color: red;
-    gap: 10px;
-    /* overflow-x: scroll; */
-    position: absolute;
-    left: 20px;
-    transition: all 0.5s ease-out;
-}
 
-.slider::-webkit-scrollbar {
-    /* display: none; */
-}
 
-.slider .card{
+.slider-container .card{
     background-color: white;
     height: 300px;
+    width: 220px;
     padding: 10px;
-    flex-basis: 220px;
+    position: absolute;
+    transition: 1s;
+    /* flex-basis: 220px;
     flex-grow: 0;
     flex-shrink: 0;
-    border-radius: 15px;
+    border-radius: 15px; */
 }
 
 

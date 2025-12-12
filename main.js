@@ -129,3 +129,63 @@ const products = [
 //     console.log(currentLeft);
 //     // sliderElem.style.left = `-${currentLeft}px`;
 // })
+
+
+///////////////////////////
+
+const sliderElem = document.querySelector('.slider-container');
+const prevBtn = document.querySelector('.prev-btn')
+const nextBtn = document.querySelector('.next-btn')
+
+let currentLeft = 240;
+let counter = 0;
+let totalWidth = 960
+let noOfCardShow = totalWidth / currentLeft;
+
+
+products.forEach((item) => {
+  let div = document.createElement("div");
+  div.classList.add("card");
+  div.innerHTML = `
+        <img src=${item.image} alt="card-image">
+        <div>
+            <h5 class="title">${item.name}</h5>
+            <p class="rating">⭐${item.rating}</p>
+        </div>
+        <div>
+            <p class="price">${item.price}</p>
+            <button>+</button>
+        </div>
+        `;
+  sliderElem.appendChild(div);
+});
+
+const cards = sliderElem.querySelectorAll('.card');
+
+cards.forEach((card, idx) => {
+    card.style.left = `${idx * currentLeft}px`;
+});
+
+
+
+nextBtn.addEventListener('click', function(){
+    if(counter < cards.length - noOfCardShow){
+        counter++;
+        slideCard()
+    };
+})
+
+prevBtn.addEventListener('click', function(){
+    if(counter == 0) return;
+    counter--;
+    slideCard()
+})
+
+
+
+
+function slideCard(){
+    cards.forEach((card) => {
+        card.style.transform = `translateX(-${counter * currentLeft}px)`;
+    });
+}
