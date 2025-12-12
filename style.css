@@ -45,8 +45,6 @@ body{
     background-color: red;
     gap: 10px;
     overflow-x: auto;
-    justify-content: center;
-    -webkit-overflow-scrolling: touch;
 }
 
 .slider .card{
@@ -56,4 +54,45 @@ body{
     flex-basis: 220px;
     flex-grow: 0;
     flex-shrink: 0;
+    border-radius: 15px;
+}
+
+.card img{
+    width: 100%;
+    max-height: 200px;
+    background: #f0e9e9;
+background: radial-gradient(circle,rgba(240, 233, 233, 1) 0%, rgba(100, 149, 237, 1) 100%);
+    border-radius: 10px;
+}
+
+.card div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0px 5px;
+}
+
+.card div .title{
+    font-size: 16px;
+}
+
+.card div .rating{
+    font-size: 12px;
+}
+.card div .price{
+    color: #6495ed;
+    font-weight: bold;
+}
+
+.card div button{
+    color: white;
+    border: 0;
+    outline: 0;
+    background-color: black;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
 }
