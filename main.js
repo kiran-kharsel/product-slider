@@ -72,52 +72,60 @@ const products = [
   }
 ];
 
-// dom element
-const sliderElem = document.querySelector('.slider');
-const prevBtn = document.querySelector('.prev-btn')
-const nextBtn = document.querySelector('.next-btn')
+// // dom element
+// const sliderElem = document.querySelector('.slider');
+// const prevBtn = document.querySelector('.prev-btn')
+// const nextBtn = document.querySelector('.next-btn')
 
 
-// show all cards
-function showCards(){
-    products.forEach((item) => {
-        let div = document.createElement('div')
-        div.classList.add('card');
-        div.innerHTML = `
-        <img src=${item.image} alt="card-image">
-        <div>
-            <h5 class="title">${item.name}</h5>
-            <p class="rating">⭐${item.rating}</p>
-        </div>
-        <div>
-            <p class="price">${item.price}</p>
-            <button>+</button>
-        </div>
-        `;
-        sliderElem.appendChild(div);
-    })
-};
+// // show all cards
+// function showCards(){
+//     products.forEach((item) => {
+//         let div = document.createElement('div')
+//         div.classList.add('card');
+//         div.innerHTML = `
+//         <img src=${item.image} alt="card-image">
+//         <div>
+//             <h5 class="title">${item.name}</h5>
+//             <p class="rating">⭐${item.rating}</p>
+//         </div>
+//         <div>
+//             <p class="price">${item.price}</p>
+//             <button>+</button>
+//         </div>
+//         `;
+//         sliderElem.appendChild(div);
+//     })
+// };
 
-showCards();
+// showCards();
 
-let currentLeft = 0;
-let slideVlaue = 240
+// let currentLeft = 0;
+// let slideVlaue = 210
 
-prevBtn.addEventListener('click', function(){
-    currentLeft -= slideVlaue;
-    if(currentLeft == 0){
-        currentLeft = 20;
-        sliderElem.style.left = `${currentLeft}px`;
-        prevBtn.disabled = true;
-    }else{
-        sliderElem.style.left = `-${currentLeft}px`;
-    }
-    //sliderElem.style.left = `-${currentLeft}px`;
-    console.log(currentLeft);
-});
+// prevBtn.addEventListener('click', function(){
+//     currentLeft -= slideVlaue;
+//     if(currentLeft == 0){
+//         currentLeft = 20;
+//         sliderElem.style.left = `${currentLeft}px`;
+//         prevBtn.disabled = true;
+//     }else{
+//         sliderElem.style.left = `-${currentLeft}px`;
+//     }
+//     //sliderElem.style.left = `-${currentLeft}px`;
+//     //console.log(currentLeft);
+// });
 
-nextBtn.addEventListener('click', function(){
-    currentLeft += slideVlaue;
-    //console.log(currentLeft);
-    sliderElem.style.left = `-${currentLeft}px`;
-})
+// nextBtn.addEventListener('click', function(){
+//     currentLeft += slideVlaue;
+//     if(currentLeft == ((products.length * slideVlaue) - (4 * slideVlaue))){
+//         currentLeft = products.length * slideVlaue - 880;
+//         sliderElem.style.left = `-${currentLeft}px`;
+//         console.log('reach')
+//         //sliderElem.style.left = '';
+//     }else{
+//         sliderElem.style.left = `-${currentLeft}px`;
+//     }
+//     console.log(currentLeft);
+//     // sliderElem.style.left = `-${currentLeft}px`;
+// })
